@@ -11,7 +11,7 @@ const Search = ({ defaultsearchVal , onSearchClick}  ) => {
 
 
   return (
-      <>
+      <div>
       <Navbar variant="dark" className="bg-dark justify-content-between">
       <Navbar.Text>
         Search for:{inputuserText}
@@ -31,7 +31,7 @@ const Search = ({ defaultsearchVal , onSearchClick}  ) => {
       
     </Navbar>
       
-    </>
+    </div>
     );
     
 }
