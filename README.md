@@ -1,7 +1,7 @@
 # Google-API-Books-Example 
-##This project was generated using [Nx](https://nx.dev).
+This project was generated using [Nx](https://nx.dev).
 ### About The Application
-This application is used to show results from the Google books API
+Create an app to search and display the results from the Google books API
 ### Functionality
 - Search for Books using Google Books API.
 - Get the response from the API and display a list of books.
