@@ -1,0 +1,44 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+.App {
+    text-align: center;
+}
+  
+.BookApp-header {
+    background-color: #007bff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+    cursor: pointer;
+}
+.BookApp-logo{
+    background: url(https://www.google.com/intl/en_ALL/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png) no-repeat;
+    background-size: 272px 92px;
+    height: 92px;
+    width: 272px;
+    position: relative;
+}
+.BookApp-logo-text{
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+    font-size: 20px;
+}
+
+nav{
+    margin-bottom: 20px;
+}
+
+  @media (min-width:768px) {
+    .card-deck > .card
+    {
+        width: 29%;
+        flex-wrap: wrap;
+        flex: initial; 
+    }
+}
