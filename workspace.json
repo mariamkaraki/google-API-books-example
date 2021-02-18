@@ -1,9 +1,29 @@
 {
   "version": 2,
+  "cli": {
+    "defaultCollection": "@nrwl/react"
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "style": "styled-components",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "styled-components"
+      },
+      "library": {
+        "style": "styled-components",
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "google-book-app",
   "projects": {
-    "my-app": {
-      "root": "apps/my-app",
-      "sourceRoot": "apps/my-app/src",
+    "google-book-app": {
+      "root": "apps/google-book-app",
+      "sourceRoot": "apps/google-book-app/src",
       "projectType": "application",
       "targets": {
         "build": {
@@ -12,14 +32,14 @@
             "{options.outputPath}"
           ],
           "options": {
-            "outputPath": "dist/apps/my-app",
-            "index": "apps/my-app/src/index.html",
-            "main": "apps/my-app/src/main.tsx",
-            "polyfills": "apps/my-app/src/polyfills.ts",
-            "tsConfig": "apps/my-app/tsconfig.app.json",
+            "outputPath": "dist/apps/google-book-app",
+            "index": "apps/google-book-app/src/index.html",
+            "main": "apps/google-book-app/src/main.tsx",
+            "polyfills": "apps/google-book-app/src/polyfills.ts",
+            "tsConfig": "apps/google-book-app/tsconfig.app.json",
             "assets": [
-              "apps/my-app/src/favicon.ico",
-              "apps/my-app/src/assets"
+              "apps/google-book-app/src/favicon.ico",
+              "apps/google-book-app/src/assets"
             ],
             "styles": [],
             "scripts": [],
@@ -29,8 +49,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/my-app/src/environments/environment.ts",
-                  "with": "apps/my-app/src/environments/environment.prod.ts"
+                  "replace": "apps/google-book-app/src/environments/environment.ts",
+                  "with": "apps/google-book-app/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -53,11 +73,11 @@
         "serve": {
           "executor": "@nrwl/web:dev-server",
           "options": {
-            "buildTarget": "my-app:build"
+            "buildTarget": "google-book-app:build"
           },
           "configurations": {
             "production": {
-              "buildTarget": "my-app:build:production"
+              "buildTarget": "google-book-app:build:production"
             }
           }
         },
@@ -65,37 +85,67 @@
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "apps/my-app/**/*.{ts,tsx,js,jsx}"
+              "apps/google-book-app/**/*.{ts,tsx,js,jsx}"
             ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
           "outputs": [
-            "coverage/apps/my-app"
+            "coverage/apps/google-book-app"
           ],
           "options": {
-            "jestConfig": "apps/my-app/jest.config.js",
+            "jestConfig": "apps/google-book-app/jest.config.js",
             "passWithNoTests": true
+          }
+        },
+        "storybook": {
+          "executor": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "port": 4400,
+            "config": {
+              "configFolder": "apps/google-book-app/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "executor": "@nrwl/storybook:build",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "outputPath": "dist/storybook/google-book-app",
+            "config": {
+              "configFolder": "apps/google-book-app/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
           }
         }
       }
     },
-    "my-app-e2e": {
-      "root": "apps/my-app-e2e",
-      "sourceRoot": "apps/my-app-e2e/src",
+    "google-book-app-e2e": {
+      "root": "apps/google-book-app-e2e",
+      "sourceRoot": "apps/google-book-app-e2e/src",
       "projectType": "application",
       "targets": {
         "e2e": {
           "executor": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/my-app-e2e/cypress.json",
-            "tsConfig": "apps/my-app-e2e/tsconfig.e2e.json",
-            "devServerTarget": "my-app:serve"
+            "cypressConfig": "apps/google-book-app-e2e/cypress.json",
+            "tsConfig": "apps/google-book-app-e2e/tsconfig.e2e.json",
+            "devServerTarget": "google-book-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "my-app:serve:production"
+              "devServerTarget": "google-book-app:serve:production"
             }
           }
         },
@@ -103,31 +153,11 @@
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "apps/my-app-e2e/**/*.{js,ts}"
+              "apps/google-book-app-e2e/**/*.{js,ts}"
             ]
           }
         }
       }
     }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/react"
-  },
-  "generators": {
-    "@nrwl/react": {
-      "application": {
-        "style": "styled-components",
-        "linter": "eslint",
-        "babel": true
-      },
-      "component": {
-        "style": "styled-components"
-      },
-      "library": {
-        "style": "styled-components",
-        "linter": "eslint"
-      }
-    }
-  },
-  "defaultProject": "my-app"
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "npmScope": "my-app",
+  "npmScope": "stores",
   "affected": {
     "defaultBase": "master"
   },
@@ -16,19 +16,22 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "accessToken": "N2VkMTlhZGItN2VhMy00YTg2LThmN2YtNDFkYThjODM1NzQwfHJlYWQtd3JpdGU=",
+        "cacheableOperations": ["build", "test", "lint", "e2e"],
+        "canTrackAnalytics": false,
+        "showUsageWarnings": true
       }
     }
   },
   "projects": {
-    "my-app": {
+    "google-book-app": {
       "tags": []
     },
-    "my-app-e2e": {
+    "google-book-app-e2e": {
       "tags": [],
-      "implicitDependencies": ["my-app"]
+      "implicitDependencies": ["google-book-app"]
     }
   }
 }
