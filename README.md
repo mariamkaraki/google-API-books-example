@@ -5,10 +5,10 @@
 This project was generated using [Nx](https://nx.dev).
 
 ### Getting Started
-1)Clone the repository
-2)install dependencies npm install
-3)Run the dev server npm start
-4)Navigate to the application's url http://localhost:4200/
+1) Clone the repository
+2) install dependencies npm install
+3) Run the dev server npm start
+4) Navigate to the application's url http://localhost:4200/
 
 
 ### Use Storybook
